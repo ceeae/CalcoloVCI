@@ -1,0 +1,11 @@
+packages
+/UnitTests/bin
+/UnitTests/obj
+/UnitTests/Properties
+/CalcoloVCI/bin
+/CalcoloVCI/Properties
+/CalcoloVCI/obj
+obj
+Properties
+bin
+.vs

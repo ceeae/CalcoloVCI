@@ -8,8 +8,6 @@ namespace UnitTests
 {
     public class SezioneAnagraficaTests
     {
-        // UnitOfWorkName_Scenario_ExpectedBehavior
-        // IsValidFilename_BadExtension_ReturnFalse
         private readonly SezioneAnagrafica sezioneAnagrafica;
 
         public SezioneAnagraficaTests()
@@ -21,32 +19,41 @@ namespace UnitTests
         public void CasoSpeciale_ApplicazioneConAlmeno5AppC3_RitornaVero()
         {
 
-            sezioneAnagrafica.ApplicazioneConAlmeno5AppC3 = (int) Risposta.Si;
+            sezioneAnagrafica.ApplicazioneConAlmeno5AppC3((int) Risposta.Si);
 
-            bool isASpecialCase = sezioneAnagrafica.CasoSpeciale();
+            bool result = sezioneAnagrafica.CasoSpeciale();
 
-            isASpecialCase.Should().BeTrue();
+            result.Should().BeTrue();
         }
 
 
         [Fact]
         public void CasoSpeciale_ValoriDefault_RitornaFalso()
         {
-            bool isASpecialCase = sezioneAnagrafica.CasoSpeciale();
+            bool result = sezioneAnagrafica.CasoSpeciale();
 
-            isASpecialCase.Should().BeFalse();
+            result.Should().BeFalse();
         }
 
         [Fact]
         public void CasoSpeciale_AppartenenzaRealtaCritiche_RitornaVero()
         {
-            sezioneAnagrafica.AppartenenzaRealtaCritiche = (int) Risposta.Si;
+            sezioneAnagrafica.AppartenenzaRealtaCritiche((int) Risposta.Si);
 
-            bool isASpecialCase = sezioneAnagrafica.CasoSpeciale();
+            bool result = sezioneAnagrafica.CasoSpeciale();
 
-            isASpecialCase.Should().BeTrue();
+            result.Should().BeTrue();
         }
 
+        [Fact]
+        public void ICTMercatp_AmbitoTecnologicoICTMercato_RitornaVero()
+        {
+            sezioneAnagrafica.AmbitoTecnologico((int)Ambito.BusinessICTMercato);
+
+            bool result = sezioneAnagrafica.ICTMercato();
+
+            result.Should().BeTrue();
+        }
 
 
     }

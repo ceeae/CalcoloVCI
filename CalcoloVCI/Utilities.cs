@@ -5,6 +5,15 @@
         No = 0, Si = 1, NonDisponibile = 2
     }
 
+    public enum Ambito : int
+    {
+        IT = 1,
+        Network = 2,
+        BusinessICTMercato = 3,
+        BusinessSistemiASupporto = 4,
+        Altro = 5
+    }
+
 }
 
 namespace TipoDati
