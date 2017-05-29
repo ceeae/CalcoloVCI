@@ -1,7 +1,18 @@
+using System;
 using CalcoloVCI;
 
 namespace UnitTests
 {
+
+    public interface IVCIBuilder
+    {
+        VCI Build();
+    }
+
+    public class NotSupportedVCIScenarioException : Exception
+    {
+    }
+
     public abstract class VCIAbstractScenario : IVCIBuilder
     {
         protected SezioneAnagrafica sa = new SezioneAnagrafica();
@@ -17,7 +28,7 @@ namespace UnitTests
         public VCI Build()
         {
             CreateScenario();
-            return vci;
+            return new VCI(sa, sc, sp, st, si);
         }
     }
 }

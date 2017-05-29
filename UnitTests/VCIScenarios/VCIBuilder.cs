@@ -7,18 +7,10 @@ using DomandeRisposte.Anagrafica;
 using DomandeRisposte.Compliance;
 using DomandeRisposte.TipoDati;
 using DomandeRisposte.Impatti;
+using UnitTests.VCIScenarios;
 
 namespace UnitTests
 {
-
-    public interface IVCIBuilder
-    {
-        VCI Build();
-    }
-
-    public class NotSupportedVCIScenarioException : Exception
-    {
-    }
 
     public static class VCIBuilder
     {
@@ -27,27 +19,29 @@ namespace UnitTests
         {
             IVCIBuilder builder = null;
 
-            if (scenarioType == Scenarios.NessunImpatto)
+            switch (scenarioType)
             {
-                builder = new VCIScenarioNessunImpatto();
-            }
-            else if (scenarioType == Scenarios.MassimoImpatto)
-            {
-                builder = new VCIScenarioMassimoImpatto();
-            }
-            else if (scenarioType == Scenarios.ICTMercatoImpattoMedio)
-            {
-                builder = new VCIScenarioICTMercatoImpattoMedio();
+                case Scenarios.NessunImpatto:
+                    builder = new VCIScenarioNessunImpatto();
+                    break;
+
+                case Scenarios.MassimoImpatto:
+                    builder = new VCIScenarioMassimoImpatto();
+                    break;
+
+                case Scenarios.ICTMercatoImpattoMedio:
+                    builder = new VCIScenarioICTMercatoImpattoMedio();
+                    break;
+
+                case Scenarios.ICTMercatoImpattoMedioCasoCritico:
+                    builder = new VCIScenarioIctMercatoImpattoMedioCasoCritico();
+                    break;
+
+                default:
+                    throw new NotSupportedException();
             }
 
-            if (builder != null)
-            {
-                return builder.Build();
-            }
-            else
-            {
-                throw new NotSupportedVCIScenarioException();
-            }
+            return builder.Build();
         }
     }
 }

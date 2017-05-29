@@ -19,7 +19,7 @@ namespace UnitTests
         public void CasoSpeciale_TrattaDatiPCIDSS_RitornaVero()
         {
 
-            sezioneCompliance.TrattaDatiPCIDSS = (int) Risposta.Si;
+            sezioneCompliance.TrattaDatiPCIDSS = Risposta.Si;
 
             bool isASpecialCase = sezioneCompliance.CasoSpeciale();
 
@@ -38,7 +38,7 @@ namespace UnitTests
         [Fact]
         public void CasoSpeciale_TrattaDatiCarteDiPagamento_RitornaVero()
         {
-            sezioneCompliance.TrattaDatiCarteDiPagamento = (int) Risposta.Si;
+            sezioneCompliance.TrattaDatiCarteDiPagamento = Risposta.Si;
 
             bool isASpecialCase = sezioneCompliance.CasoSpeciale();
 
@@ -53,7 +53,7 @@ namespace UnitTests
         [InlineData(Perimetro.ICTMercatoPortaliWeb, Risposta.Si, 1.7)]
         public void CalcolaVc_SuUnicoPerimetro_RitornaVc(int perimetro, int risposta, double vc)
         {
-            sezioneCompliance.ImpostaQuestionario(perimetro, risposta);
+            sezioneCompliance.ImpostaDomandaQuestionario(perimetro, risposta);
 
             double result = sezioneCompliance.CalcolaVc();
 
@@ -63,14 +63,14 @@ namespace UnitTests
         [Fact]
         public void CalcolaVc_SuPerimetroMagistraturaEPCIDSS_Ritorna4()
         {
-            sezioneCompliance.ImpostaQuestionario(
-                (int) Perimetro.Magistratura, 
-                (int) Risposta.Si
+            sezioneCompliance.ImpostaDomandaQuestionario(
+                Perimetro.Magistratura, 
+                Risposta.Si
             );
 
-            sezioneCompliance.ImpostaQuestionario(
-                (int)Perimetro.PCIDSS,
-                (int)Risposta.Si
+            sezioneCompliance.ImpostaDomandaQuestionario(
+                Perimetro.PCIDSS,
+                Risposta.Si
             );
 
             double result = sezioneCompliance.CalcolaVc();

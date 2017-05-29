@@ -6,7 +6,7 @@ namespace UnitTests
     {
         protected override void CreateScenario()
         {
-            vci = new VCI(sa, sc, sp, st, si);
+            // Nothing to do Hihihi! :)
         }
     }
 }

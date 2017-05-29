@@ -22,7 +22,7 @@ namespace UnitTests
         [InlineData(Perimetro.DatiTraffico, Risposta.Si, 3.8)]
         public void CalcolaVc_SuUnicoPerimetro_RitornaVc(int perimetro, int risposta, double vc)
         {
-            sezioneTipoDati.ImpostaQuestionario(perimetro, risposta);
+            sezioneTipoDati.ImpostaDomandaQuestionario(perimetro, risposta);
 
             double result = sezioneTipoDati.CalcolaVc();
 
@@ -40,8 +40,8 @@ namespace UnitTests
             3.0)]
         public void CalcolaVc_SuDoppioPerimetro(int d1, int r1, int d2, int r2, double vc)
         {
-            sezioneTipoDati.ImpostaQuestionario(d1, r1);
-            sezioneTipoDati.ImpostaQuestionario(d2, r2);
+            sezioneTipoDati.ImpostaDomandaQuestionario(d1, r1);
+            sezioneTipoDati.ImpostaDomandaQuestionario(d2, r2);
 
             double result = sezioneTipoDati.CalcolaVc();
 

@@ -19,7 +19,7 @@ namespace UnitTests
         public void CasoSpeciale_ApplicazioneConAlmeno5AppC3_RitornaVero()
         {
 
-            sezioneAnagrafica.ApplicazioneConAlmeno5AppC3(Risposta.Si);
+            sezioneAnagrafica.DomandaApplicazioneConAlmeno5AppC3(Risposta.Si);
 
             bool result = sezioneAnagrafica.CasoSpeciale();
 
@@ -38,7 +38,7 @@ namespace UnitTests
         [Fact]
         public void CasoSpeciale_AppartenenzaRealtaCritiche_RitornaVero()
         {
-            sezioneAnagrafica.AppartenenzaRealtaCritiche(Risposta.Si);
+            sezioneAnagrafica.DomandaAppartenenzaRealtaCritiche(Risposta.Si);
 
             bool result = sezioneAnagrafica.CasoSpeciale();
 

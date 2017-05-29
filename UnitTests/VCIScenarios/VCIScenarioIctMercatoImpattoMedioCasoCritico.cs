@@ -1,15 +1,22 @@
-﻿using CalcoloVCI;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace UnitTests
+namespace UnitTests.VCIScenarios
 {
-    public class VCIScenarioICTMercatoImpattoMedio : VCIAbstractScenario
+    public class VCIScenarioIctMercatoImpattoMedioCasoCritico : VCIAbstractScenario
     {
-
         protected override void CreateScenario()
         {
             // Sezione Anagrafica
             sa.AmbitoTecnologico(
                 DomandeRisposte.Anagrafica.Ambito.BusinessICTMercato
+                );
+
+            sa.DomandaAppartenenzaRealtaCritiche(
+                DomandeRisposte.Anagrafica.Risposta.Si
                 );
 
             // Sezione Compliance

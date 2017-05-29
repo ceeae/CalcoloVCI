@@ -8,22 +8,24 @@ namespace UnitTests
         protected override void CreateScenario()
         {
             // Sezione Anagrafica
-            sa.AppartenenzaRealtaCritiche(DomandeRisposte.Anagrafica.Risposta.Si);
+            sa.DomandaAppartenenzaRealtaCritiche(
+                DomandeRisposte.Anagrafica.Risposta.Si
+                );
 
             // Sezione Compliance
-            sc.ImpostaQuestionario(
+            sc.ImpostaDomandaQuestionario(
                 DomandeRisposte.Compliance.Perimetro.Magistratura, 
                 DomandeRisposte.Compliance.Risposta.Si
                 );
 
             // Sezione Processi
-            sp.ImpostaQuestionario(
+            sp.ImpostaDomandaQuestionario(
                 DomandeRisposte.Processi.Domanda.CustomerRelationshipManagement,
                 DomandeRisposte.Processi.Risposta.Determinante
                 );
 
             // Sezione Tipo Dati
-            st.ImpostaQuestionario(
+            st.ImpostaDomandaQuestionario(
                 DomandeRisposte.TipoDati.Perimetro.DatiSensibili,
                 DomandeRisposte.TipoDati.Risposta.Si
                 );
@@ -34,7 +36,6 @@ namespace UnitTests
                 DomandeRisposte.Impatti.Disponibilita.MassimaPriorita
                 );
 
-            vci = new VCI(sa, sc, sp, st, si);
         }
     }
 }

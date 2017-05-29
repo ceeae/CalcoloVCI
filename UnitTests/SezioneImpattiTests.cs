@@ -18,7 +18,7 @@ namespace UnitTests
         [Fact]
         public void CalcolaRID_Default_Return2()
         {
-            int rid = sezioneImpatti.rid;
+            int rid = sezioneImpatti.ValoreRID();
 
             rid.Should().Be(2);
         }
@@ -37,7 +37,7 @@ namespace UnitTests
         public void CalcolaRID(int r, int i, int d)
         {
             sezioneImpatti.ImpostaRID(r, i, d);
-            int rid = sezioneImpatti.rid;
+            int rid = sezioneImpatti.ValoreRID();
 
             rid.Should().Be(r + i + d);
         }

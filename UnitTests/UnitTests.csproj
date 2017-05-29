@@ -88,6 +88,7 @@
     <Compile Include="VCIScenarios\VCIAbstractScenario.cs" />
     <Compile Include="VCIScenarios\VCIBuilder.cs" />
     <Compile Include="VCIScenarios\VCIScenarioIctMercatoImpattoMedio.cs" />
+    <Compile Include="VCIScenarios\VCIScenarioIctMercatoImpattoMedioCasoCritico.cs" />
     <Compile Include="VCIScenarios\VCIScenarioMassimoImpatto.cs" />
     <Compile Include="VCIScenarios\VCIScenarioNessunImpatto.cs" />
     <Compile Include="VCITests.cs" />

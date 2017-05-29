@@ -14,6 +14,7 @@ namespace UnitTests
         [InlineData(Scenarios.NessunImpatto, 2.24)]
         [InlineData(Scenarios.MassimoImpatto, 1250.00)]
         [InlineData(Scenarios.ICTMercatoImpattoMedio, 306.92)]
+        [InlineData(Scenarios.ICTMercatoImpattoMedioCasoCritico, 312.00)]
 
         public void CalcolaVCI_VariScenari(int scenario, double vcivalue)
         {

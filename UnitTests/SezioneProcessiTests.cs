@@ -39,8 +39,8 @@ namespace UnitTests
             23.39)]
         public void CalcolaPp_DoppioPerimetro(int d1, int r1, int d2, int r2, double pp)
         {
-            processi.ImpostaQuestionario(d1, r1);
-            processi.ImpostaQuestionario(d2, r2);
+            processi.ImpostaDomandaQuestionario(d1, r1);
+            processi.ImpostaDomandaQuestionario(d2, r2);
 
             double result = processi.CalcolaPp();
 
