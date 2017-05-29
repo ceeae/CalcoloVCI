@@ -1,6 +1,7 @@
 ﻿
 
 using System;
+using System.Linq;
 using System.Security.Permissions;
 
 namespace CalcoloVCI
@@ -33,28 +34,31 @@ namespace CalcoloVCI
 
         public double CalcolaVCI()
         {
+            double pp = CalcolaPp();
+            double vc = CalcolaVc();
+            double vb = CalcolaVb();
             // 2 digit precision e.g. 2.24
-            return Math.Round(5 * CalcolaPp()*CalcolaVb() + Math.Pow(5, CalcolaVc()), 2);
+            return Math.Round(5 * pp* vb + Math.Pow(5, vc), 2);
         }
 
         private double CalcolaPp()
         {
-            //if (sezioneAnagrafica.AmbitoICTMercato())
-            //{
-            //    return PPICTMERCATO;
-            //}
-            //return sezioneProcessi.CalcolaPp();
-            return 0;
+            if (sezioneAnagrafica.ICTMercato())
+            {
+                return PPICTMERCATO;
+            }
+            return sezioneProcessi.CalcolaPp();
         }
 
         private double CalcolaVb()
         {
-            return 0;
+            return sezioneImpatti.CalcolaVb();
         }
 
         private double CalcolaVc()
         {
-            return 0.5;
+            double[] Vc = {0.5, sezioneCompliance.CalcolaVc(), sezioneTipoDati.CalcolaVc()};
+            return Vc.Max();
         }
 
     }

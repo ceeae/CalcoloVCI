@@ -78,12 +78,18 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="VCIScenarios\Scenarios.cs" />
     <Compile Include="SezioneAnagraficaTests.cs" />
     <Compile Include="SezioneProcessiTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SezioneComplianceTests.cs" />
     <Compile Include="SezioneImpattiTests.cs" />
     <Compile Include="SezioneTipoDatiTests.cs" />
+    <Compile Include="VCIScenarios\VCIAbstractScenario.cs" />
+    <Compile Include="VCIScenarios\VCIBuilder.cs" />
+    <Compile Include="VCIScenarios\VCIScenarioIctMercatoImpattoMedio.cs" />
+    <Compile Include="VCIScenarios\VCIScenarioMassimoImpatto.cs" />
+    <Compile Include="VCIScenarios\VCIScenarioNessunImpatto.cs" />
     <Compile Include="VCITests.cs" />
   </ItemGroup>
   <ItemGroup>

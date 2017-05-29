@@ -2,7 +2,7 @@
 using FluentAssertions;
 using CalcoloVCI;
 
-using Impatti;
+using DomandeRisposte.Impatti;
 
 namespace UnitTests
 {
@@ -15,6 +15,13 @@ namespace UnitTests
             sezioneImpatti = new SezioneImpatti();
         }
 
+        [Fact]
+        public void CalcolaRID_Default_Return2()
+        {
+            int rid = sezioneImpatti.rid;
+
+            rid.Should().Be(2);
+        }
 
         [Theory]
         [InlineData(

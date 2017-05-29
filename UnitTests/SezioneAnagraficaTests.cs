@@ -2,7 +2,7 @@
 using FluentAssertions;
 using CalcoloVCI;
 
-using Anagrafica;
+using DomandeRisposte.Anagrafica;
 
 namespace UnitTests
 {
@@ -19,7 +19,7 @@ namespace UnitTests
         public void CasoSpeciale_ApplicazioneConAlmeno5AppC3_RitornaVero()
         {
 
-            sezioneAnagrafica.ApplicazioneConAlmeno5AppC3((int) Risposta.Si);
+            sezioneAnagrafica.ApplicazioneConAlmeno5AppC3(Risposta.Si);
 
             bool result = sezioneAnagrafica.CasoSpeciale();
 
@@ -38,7 +38,7 @@ namespace UnitTests
         [Fact]
         public void CasoSpeciale_AppartenenzaRealtaCritiche_RitornaVero()
         {
-            sezioneAnagrafica.AppartenenzaRealtaCritiche((int) Risposta.Si);
+            sezioneAnagrafica.AppartenenzaRealtaCritiche(Risposta.Si);
 
             bool result = sezioneAnagrafica.CasoSpeciale();
 
@@ -48,13 +48,12 @@ namespace UnitTests
         [Fact]
         public void ICTMercatp_AmbitoTecnologicoICTMercato_RitornaVero()
         {
-            sezioneAnagrafica.AmbitoTecnologico((int)Ambito.BusinessICTMercato);
+            sezioneAnagrafica.AmbitoTecnologico(Ambito.BusinessICTMercato);
 
             bool result = sezioneAnagrafica.ICTMercato();
 
             result.Should().BeTrue();
         }
-
 
     }
 }

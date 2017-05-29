@@ -1,139 +1,150 @@
-﻿namespace Anagrafica
+﻿
+
+namespace DomandeRisposte.Anagrafica
 {
-    public enum Risposta : int
+    public static class Ambito
     {
-        No = 0, Si = 1, NonDisponibile = 2
+        public const int IT = 1;
+        public const int Network = 2;
+        public const int BusinessICTMercato = 3;
+        public const int BusinessSistemiASupporto = 4;
+        public const int Altro = 5;
     }
 
-    public enum Ambito : int
+    public static class Risposta
     {
-        IT = 1,
-        Network = 2,
-        BusinessICTMercato = 3,
-        BusinessSistemiASupporto = 4,
-        Altro = 5
+        public const int No = 0;
+        public const int Si = 1;
+        public const int NonDisponibile = 2;
     }
 
 }
 
-namespace TipoDati
+namespace DomandeRisposte.Compliance
 {
-    public enum Perimetro : int
+    public static class Perimetro 
     {
-        NO196 = 0,
-        DatiPersonali = 1,
-        DatiSensibili = 2,
-        DatiGiudiziari = 3,
-        DatiTraffico = 4,
-        DatiLocalizzazione = 5
+        public const int Magistratura = 0;
+        public const int DatiIntercettazzione = 1;
+        public const int OLO = 2;
+        public const int SOX = 3;
+        public const int Cessati = 4;
+        public const int DipartimentiCessati = 5;
+        public const int CustomerProfiling = 6;
+        public const int CustomerProfilingConsensato = 7;
+        public const int DatiPseudonimi = 8;
+        public const int ReatiInformatici231 = 9;
+        public const int ReatiInformatici231AMedioRischioInerente = 10;
+        public const int Resilienza = 11;
+        public const int InformazioniPrivilegiate = 12;
+        public const int DipartimentaleGarante3 = 13;
+        public const int PostaElettronica = 14;
+        public const int NavigazioneInternet = 15;
+        public const int DisasterRecovery = 16;
+        public const int PCIDSS = 17;
+        public const int PV = 18;
+        public const int PortaliWeb = 19;
+        public const int PortaliWebAdAccessoSelettivo = 20;
+        public const int PortaliWebConContenutiUtentiContraenti = 21;
+        public const int CookieAnalyticsTerzeParti = 22;
+        public const int CookieProfilazionePrimaParte = 23;
+        public const int CookieProfilazioneTerzeParti = 24;
+        public const int ICTMercato = 25;
+        public const int ICTMercato231ReatiInformatici = 26;
+        public const int ICTMercato231AMedioRischioInerente = 27;
+        public const int ICTMercatoSanitario = 28;
+        public const int ICTMercatoFSEDossierSanitario = 29;
+        public const int ICTMercatoCartePagamento = 30;
+        public const int ICTMercatoRegolamentoEnergia = 31;
+        public const int ICTMercatoAmbitoBancarioCircolare263 = 32;
+        public const int ICTMercatoScambioDatiPersonaliTraPA = 33;
+        public const int ICTMercatoPortaliWeb = 34;
     }
-    public enum Risposta : int
+    public static class Risposta
     {
-        No = 0, Si = 1
+        public const int No = 0;
+        public const int Si = 1;
     }
 }
 
-namespace Compliance
-{
-    public enum Perimetro : int
-    {
-        Magistratura = 0,
-        DatiIntercettazzione = 1,
-        OLO = 2,
-        SOX = 3,
-        Cessati = 4,
-        DipartimentiCessati = 5,
-        CustomerProfiling = 6,
-        CustomerProfilingConsensato = 7,
-        DatiPseudonimi = 8,
-        ReatiInformatici231 = 9,
-        ReatiInformatici231AMedioRischioInerente = 10,
-        Resilienza = 11,
-        InformazioniPrivilegiate = 12,
-        DipartimentaleGarante3 = 13,
-        PostaElettronica = 14,
-        NavigazioneInternet = 15,
-        DisasterRecovery = 16,
-        PCIDSS = 17,
-        PV = 18,
-        PortaliWeb = 19,
-        PortaliWebAdAccessoSelettivo = 20,
-        PortaliWebConContenutiUtentiContraenti = 21,
-        CookieAnalyticsTerzeParti = 22,
-        CookieProfilazionePrimaParte = 23,
-        CookieProfilazioneTerzeParti = 24,
-        ICTMercato = 25,
-        ICTMercato231ReatiInformatici = 26,
-        ICTMercato231AMedioRischioInerente = 27,
-        ICTMercatoSanitario = 28,
-        ICTMercatoFSEDossierSanitario = 29,
-        ICTMercatoCartePagamento = 30,
-        ICTMercatoRegolamentoEnergia = 31,
-        ICTMercatoAmbitoBancarioCircolare263 = 32,
-        ICTMercatoScambioDatiPersonaliTraPA = 33,
-        ICTMercatoPortaliWeb = 34
-    }
-    public enum Risposta : int
-    {
-        No = 0, Si = 1
-    }
-}
-
-namespace Impatti
+namespace DomandeRisposte.Impatti
 {
 
-    public enum Riservatezza : int
+    public static class Riservatezza
     {
-        Basso = 1, Medio = 2, Alto = 3
+        public const int Basso = 1;
+        public const int Medio = 2;
+        public const int Alto = 3;
     }
 
-    public enum Integrita : int
+    public static class Integrita
     {
-        Basso = 1, Medio = 2, Alto = 3
+        public const int Basso = 1;
+        public const int Medio = 2;
+        public const int Alto = 3;
     }
 
-    public enum Disponibilita : int
+    public static class Disponibilita
     {
-        MaggioreDiUnaSettimana = 0,
-        MinoreDiUnaSettimana = 1,
-        MinoreDiUnGiorno = 2,
-        MinoreDiUnOra = 3,
-        MassimaPriorita = 4
+        public const int MaggioreDiUnaSettimana = 0;
+        public const int MinoreDiUnaSettimana = 1;
+        public const int MinoreDiUnGiorno = 2;
+        public const int MinoreDiUnOra = 3;
+        public const int MassimaPriorita = 4;
     }
 
 }
 
-namespace Processi
+
+namespace DomandeRisposte.Processi
 {
 
-    public enum Domanda : int
+    public static class Domanda
     {
-        CustomerRelationshipManagement = 0,
-        MarketingAndOfferManagement = 1,
-        SupplierAndPartnerRelationshipManagement = 2,
-        ServiceDevelopmentAndManagement = 3,
-        ResourceManagementAndOperations = 4,
-        ServiceManagementAndOperations = 5,
-        ResourceDevelopmentAndManagement = 6,
-        SupplyChainDevelopmentAndManagement = 7,
-        EnterpriseRiskManagement = 8,
-        StrategicEnterprisePlanning = 9,
-        EnterpriseEffectivenessManagement = 10,
-        FinancialAndAssetManagement = 11,
-        StakeholderAndExternalRelationsManagement = 12,
-        KnowledgeAndResearchManagement = 13,
-        HumanResourcesManagement = 14
+        public const int CustomerRelationshipManagement = 0;
+        public const int MarketingAndOfferManagement = 1;
+        public const int SupplierAndPartnerRelationshipManagement = 2;
+        public const int ServiceDevelopmentAndManagement = 3;
+        public const int ResourceManagementAndOperations = 4;
+        public const int ServiceManagementAndOperations = 5;
+        public const int ResourceDevelopmentAndManagement = 6;
+        public const int SupplyChainDevelopmentAndManagement = 7;
+        public const int EnterpriseRiskManagement = 8;
+        public const int StrategicEnterprisePlanning = 9;
+        public const int EnterpriseEffectivenessManagement = 10;
+        public const int FinancialAndAssetManagement = 11;
+        public const int StakeholderAndExternalRelationsManagement = 12;
+        public const int KnowledgeAndResearchManagement = 13;
+        public const int HumanResourcesManagement = 14;
     }
 
-    public enum Risposta : int
+    public static class Risposta
     {
-        Nessuno = 0,
-        Marginale = 1,
-        PocoInfluente = 2,
-        Influente = 3,
-        Rilevante = 4,
-        Determinante = 5
+        public const int Nessuno = 0;
+        public const int Marginale = 1;
+        public const int PocoInfluente = 2;
+        public const int Influente = 3;
+        public const int Rilevante = 4;
+        public const int Determinante = 5;
     }
 
+}
+
+namespace DomandeRisposte.TipoDati
+{
+    public static class Perimetro
+    {
+        public const int NO196 = 0;
+        public const int DatiPersonali = 1;
+        public const int DatiSensibili = 2;
+        public const int DatiGiudiziari = 3;
+        public const int DatiTraffico = 4;
+        public const int DatiLocalizzazione = 5;
+    }
+    public static class Risposta
+    {
+        public const int No = 0;
+        public const int Si = 1;
+    }
 }
 

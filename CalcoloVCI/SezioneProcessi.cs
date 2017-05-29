@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DomandeRisposte.Processi;
 
 namespace CalcoloVCI
 {
@@ -23,7 +24,7 @@ namespace CalcoloVCI
 
         private void ImpostaQuestionariConNessunoImpatto()
         {
-            Ij = (int[])Enumerable.Repeat((int)Processi.Risposta.Nessuno, NPROCESSI).ToArray();
+            Ij = (int[])Enumerable.Repeat(Risposta.Nessuno, NPROCESSI).ToArray();
         }
 
         public double CalcolaPp()

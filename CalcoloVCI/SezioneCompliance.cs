@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Compliance;
+using DomandeRisposte.Compliance;
 
 namespace CalcoloVCI
 {
@@ -25,20 +25,20 @@ namespace CalcoloVCI
 
         public SezioneCompliance()
         {
-            TrattaDatiPCIDSS = (int)Risposta.No;
-            TrattaDatiCarteDiPagamento = (int)Risposta.No;
+            TrattaDatiPCIDSS = Risposta.No;
+            TrattaDatiCarteDiPagamento = Risposta.No;
             ImpostaQuestionariConNessunoImpatto();
         }
 
         private void ImpostaQuestionariConNessunoImpatto()
         {
-            Ij = (int[])Enumerable.Repeat((int)Risposta.No, NPERIMETRI).ToArray();
+            Ij = (int[])Enumerable.Repeat(Risposta.No, NPERIMETRI).ToArray();
         }
 
         public bool CasoSpeciale()
         {
-            return TrattaDatiPCIDSS == (int)Risposta.Si ||
-                   TrattaDatiCarteDiPagamento == (int)Risposta.Si;
+            return TrattaDatiPCIDSS == Risposta.Si ||
+                   TrattaDatiCarteDiPagamento == Risposta.Si;
         }
         public void ImpostaQuestionario(int processo, int impatto)
         {

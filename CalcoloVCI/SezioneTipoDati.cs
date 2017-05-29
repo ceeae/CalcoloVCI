@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using TipoDati;
+using DomandeRisposte.TipoDati;
 
 namespace CalcoloVCI
 {
@@ -24,7 +24,7 @@ namespace CalcoloVCI
 
         private void ImpostaQuestionariConNessunoImpatto()
         {
-            Ij = (int[])Enumerable.Repeat((int)Risposta.No, NPERIMETRI).ToArray();
+            Ij = (int[])Enumerable.Repeat(Risposta.No, NPERIMETRI).ToArray();
         }
 
         public void ImpostaQuestionario(int processo, int impatto)

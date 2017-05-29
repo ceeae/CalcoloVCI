@@ -1,4 +1,4 @@
-﻿using Anagrafica;
+﻿using DomandeRisposte.Anagrafica;
 
 namespace CalcoloVCI
 {
@@ -6,9 +6,9 @@ namespace CalcoloVCI
     public class SezioneAnagrafica
     {
         // Domande: AmbitoTecnologico, Applicazione5C3, AppartenenzaRealtaCritiche
-        private int ambitoTecnologico = (int) Ambito.IT;
-        private int applicazioneConAlmeno5AppC3 = (int) Risposta.NonDisponibile;
-        private int appartenenzaRealtaCritiche = (int)Risposta.NonDisponibile;
+        private int ambitoTecnologico = Ambito.IT;
+        private int applicazioneConAlmeno5AppC3 = Risposta.NonDisponibile;
+        private int appartenenzaRealtaCritiche = Risposta.NonDisponibile;
 
         public SezioneAnagrafica()
         {
@@ -31,13 +31,13 @@ namespace CalcoloVCI
 
         public bool CasoSpeciale()
         {
-            return applicazioneConAlmeno5AppC3 == (int) Risposta.Si || 
-                   appartenenzaRealtaCritiche == (int) Risposta.Si;
+            return applicazioneConAlmeno5AppC3 == Risposta.Si || 
+                   appartenenzaRealtaCritiche == Risposta.Si;
         }
 
         public bool ICTMercato()
         {
-            return ambitoTecnologico == (int) Ambito.BusinessICTMercato;
+            return ambitoTecnologico == Ambito.BusinessICTMercato;
         }
     }
 }

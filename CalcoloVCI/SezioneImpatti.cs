@@ -12,6 +12,12 @@ namespace CalcoloVCI
 
         public int rid { get; private set; }
 
+        public SezioneImpatti()
+        {
+            rid = 2;
+        }
+
+
         public void ImpostaRID(int r, int i, int d)
         {
             rid = r + i + d;

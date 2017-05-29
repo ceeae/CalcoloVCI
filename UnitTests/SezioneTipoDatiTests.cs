@@ -2,7 +2,7 @@
 using FluentAssertions;
 
 using CalcoloVCI;
-using TipoDati;
+using DomandeRisposte.TipoDati;
 
 namespace UnitTests
 {

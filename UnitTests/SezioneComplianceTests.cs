@@ -2,7 +2,7 @@
 using FluentAssertions;
 
 using CalcoloVCI;
-using Compliance;
+using DomandeRisposte.Compliance;
 
 namespace UnitTests
 {
