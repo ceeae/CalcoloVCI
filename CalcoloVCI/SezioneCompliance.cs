@@ -19,14 +19,8 @@ namespace CalcoloVCI
 
         private double[] PjIj = new double[NPERIMETRI];
 
-        public int TrattaDatiPCIDSS { get; set; }
-
-        public int TrattaDatiCarteDiPagamento { get; set; }
-
         public SezioneCompliance()
         {
-            TrattaDatiPCIDSS = Risposta.No;
-            TrattaDatiCarteDiPagamento = Risposta.No;
             ImpostaTutteLeDomandeConNessunoImpatto();
         }
 
@@ -37,13 +31,36 @@ namespace CalcoloVCI
 
         public bool CasoSpeciale()
         {
-            return TrattaDatiPCIDSS == Risposta.Si ||
-                   TrattaDatiCarteDiPagamento == Risposta.Si;
+            return TrattaDatiPCIDSS() || 
+                   TrattaDatiCarteDiPagamento() ||
+                   TrattaDatiSOX();
         }
+
+        private bool TrattaDatiPCIDSS()
+        {
+            return RitornaRispostaQuestionario(Perimetro.PCIDSS) == Risposta.Si;
+        }
+
+        private bool TrattaDatiCarteDiPagamento()
+        {
+            return RitornaRispostaQuestionario(Perimetro.ICTMercatoCartePagamento) == Risposta.Si;
+        }
+
+        private bool TrattaDatiSOX()
+        {
+            return RitornaRispostaQuestionario(Perimetro.SOX) == Risposta.Si;
+        }
+
+        public int RitornaRispostaQuestionario(int domanda)
+        {
+            return Ij[domanda];
+        }
+
         public void ImpostaDomandaQuestionario(int processo, int impatto)
         {
             Ij[processo] = impatto;
         }
+
         private void CalcolaPjxIj()
         {
             for (int j = 0; j < Pj.Length; j++)

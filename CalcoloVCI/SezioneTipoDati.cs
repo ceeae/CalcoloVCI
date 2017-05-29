@@ -31,6 +31,7 @@ namespace CalcoloVCI
         {
             Ij[processo] = impatto;
         }
+
         private void CalcolaPjxIj()
         {
             for (int j = 0; j < Pj.Length; j++)
