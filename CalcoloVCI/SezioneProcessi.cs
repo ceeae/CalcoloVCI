@@ -19,10 +19,10 @@ namespace CalcoloVCI
 
         public SezioneProcessi()
         {
-            ImpostaQuestionariConNessunoImpatto();
+            ImpostaTutteLeDomandeConNessunoImpatto();
         }
 
-        private void ImpostaQuestionariConNessunoImpatto()
+        private void ImpostaTutteLeDomandeConNessunoImpatto()
         {
             Ij = (int[])Enumerable.Repeat(Risposta.Nessuno, NPROCESSI).ToArray();
         }
@@ -41,7 +41,7 @@ namespace CalcoloVCI
             return Math.Round(M + DeltaM*Gamma, 2);
         }
 
-        public void ImpostaQuestionario(int processo, int impatto)
+        public void ImpostaDomandaQuestionario(int processo, int impatto)
         {
             Ij[processo] = impatto;
         }

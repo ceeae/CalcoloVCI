@@ -8,7 +8,7 @@ namespace CalcoloVCI
 {
     public class VCI
     {
-        private const double MINVCI = 312.0;
+        private const double VCIMIN = 312.0;
         private const double PPICTMERCATO = 12.0;
 
         private SezioneAnagrafica sezioneAnagrafica;
@@ -37,8 +37,21 @@ namespace CalcoloVCI
             double pp = CalcolaPp();
             double vc = CalcolaVc();
             double vb = CalcolaVb();
+
             // 2 digit precision e.g. 2.24
-            return Math.Round(5 * pp* vb + Math.Pow(5, vc), 2);
+            double vci = Math.Round(5*pp*vb + Math.Pow(5, vc), 2);
+
+            if (CasoSpecialeConVCISottoMinimo(vci))
+            {
+                return VCIMIN;
+            }
+            return vci;
+        }
+
+
+        private bool CasoSpecialeConVCISottoMinimo(double vci)
+        {
+            return vci < VCIMIN && sezioneAnagrafica.CasoSpeciale();
         }
 
         private double CalcolaPp()

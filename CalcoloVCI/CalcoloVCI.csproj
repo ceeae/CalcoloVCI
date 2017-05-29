@@ -46,7 +46,7 @@
     <Compile Include="SezioneProcessi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SezioneTipoDati.cs" />
-    <Compile Include="Utilities.cs" />
+    <Compile Include="DomandeRisposte.cs" />
     <Compile Include="VCI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

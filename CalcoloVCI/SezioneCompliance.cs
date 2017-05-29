@@ -27,10 +27,10 @@ namespace CalcoloVCI
         {
             TrattaDatiPCIDSS = Risposta.No;
             TrattaDatiCarteDiPagamento = Risposta.No;
-            ImpostaQuestionariConNessunoImpatto();
+            ImpostaTutteLeDomandeConNessunoImpatto();
         }
 
-        private void ImpostaQuestionariConNessunoImpatto()
+        private void ImpostaTutteLeDomandeConNessunoImpatto()
         {
             Ij = (int[])Enumerable.Repeat(Risposta.No, NPERIMETRI).ToArray();
         }
@@ -40,7 +40,7 @@ namespace CalcoloVCI
             return TrattaDatiPCIDSS == Risposta.Si ||
                    TrattaDatiCarteDiPagamento == Risposta.Si;
         }
-        public void ImpostaQuestionario(int processo, int impatto)
+        public void ImpostaDomandaQuestionario(int processo, int impatto)
         {
             Ij[processo] = impatto;
         }

@@ -10,13 +10,17 @@ namespace CalcoloVCI
     {
         private readonly int[] V = { 1, 1, 1, 2, 2, 2, 3, 4, 5, 5 };
 
-        public int rid { get; private set; }
+        private int rid;
 
         public SezioneImpatti()
         {
             rid = 2;
         }
 
+        public int ValoreRID()
+        {
+            return rid;
+        }
 
         public void ImpostaRID(int r, int i, int d)
         {
