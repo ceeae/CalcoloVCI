@@ -48,7 +48,7 @@ namespace UnitTests
         [Fact]
         public void ICTMercatp_AmbitoTecnologicoICTMercato_RitornaVero()
         {
-            sezioneAnagrafica.AmbitoTecnologico(Ambito.BusinessICTMercato);
+            sezioneAnagrafica.ImpostaAmbitoTecnologico(Ambito.BusinessICTMercato);
 
             bool result = sezioneAnagrafica.ICTMercato();
 

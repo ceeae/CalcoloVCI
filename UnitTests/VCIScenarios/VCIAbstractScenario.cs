@@ -15,11 +15,11 @@ namespace UnitTests
 
     public abstract class VCIAbstractScenario : IVCIBuilder
     {
-        protected SezioneAnagrafica sa = new SezioneAnagrafica();
-        protected SezioneCompliance sc = new SezioneCompliance();
-        protected SezioneProcessi sp = new SezioneProcessi();
-        protected SezioneTipoDati st = new SezioneTipoDati();
-        protected SezioneImpatti si = new SezioneImpatti();
+        protected SezioneAnagrafica sezioneAnagrafica = new SezioneAnagrafica();
+        protected SezioneCompliance sezioneCompliance = new SezioneCompliance();
+        protected SezioneProcessi sezioneProcessi = new SezioneProcessi();
+        protected SezioneTipoDati sezioneTipoDati = new SezioneTipoDati();
+        protected SezioneImpatti sezioneImpatti = new SezioneImpatti();
 
         protected VCI vci = null;
 
@@ -28,7 +28,7 @@ namespace UnitTests
         public VCI Build()
         {
             CreateScenario();
-            return new VCI(sa, sc, sp, st, si);
+            return new VCI(sezioneAnagrafica, sezioneCompliance, sezioneProcessi, sezioneTipoDati, sezioneImpatti);
         }
     }
 }

@@ -5,12 +5,12 @@ namespace CalcoloVCI
 
     public class SezioneAnagrafica
     {
-        // Domande: AmbitoTecnologico, Applicazione5C3, DomandaAppartenenzaRealtaCritiche
+        // Domande: ImpostaAmbitoTecnologico, Applicazione5C3, DomandaAppartenenzaRealtaCritiche
         private int ambitoTecnologico = Ambito.IT;
         private int applicazioneConAlmeno5AppC3 = Risposta.NonDisponibile;
         private int appartenenzaRealtaCritiche = Risposta.NonDisponibile;
 
-        public void AmbitoTecnologico(int ambito)
+        public void ImpostaAmbitoTecnologico(int ambito)
         {
             ambitoTecnologico = ambito;
         }

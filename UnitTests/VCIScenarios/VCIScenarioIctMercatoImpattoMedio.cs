@@ -8,34 +8,34 @@ namespace UnitTests
         protected override void CreateScenario()
         {
             // Sezione Anagrafica
-            sa.AmbitoTecnologico(
+            sezioneAnagrafica.ImpostaAmbitoTecnologico(
                 DomandeRisposte.Anagrafica.Ambito.BusinessICTMercato
                 );
 
             // Sezione Compliance
-            sc.ImpostaDomandaQuestionario(
+            sezioneCompliance.ImpostaDomandaQuestionario(
                 DomandeRisposte.Compliance.Perimetro.InformazioniPrivilegiate,
                 DomandeRisposte.Compliance.Risposta.Si
                 );
-            sc.ImpostaDomandaQuestionario(
+            sezioneCompliance.ImpostaDomandaQuestionario(
                 DomandeRisposte.Compliance.Perimetro.CookieAnalyticsTerzeParti,
                 DomandeRisposte.Compliance.Risposta.Si
                 );
 
             // Sezione Processi
-            sp.ImpostaDomandaQuestionario(
+            sezioneProcessi.ImpostaDomandaQuestionario(
                 DomandeRisposte.Processi.Domanda.HumanResourcesManagement,
                 DomandeRisposte.Processi.Risposta.Influente
                 );
 
             // Sezione Tipo Dati
-            st.ImpostaDomandaQuestionario(
+            sezioneTipoDati.ImpostaDomandaQuestionario(
                 DomandeRisposte.TipoDati.Perimetro.NO196,
                 DomandeRisposte.TipoDati.Risposta.Si
                 );
 
             // Sezione Impatti
-            si.ImpostaRID(
+            sezioneImpatti.ImpostaRID(
                 DomandeRisposte.Impatti.Riservatezza.Medio,
                 DomandeRisposte.Impatti.Integrita.Medio,
                 DomandeRisposte.Impatti.Disponibilita.MaggioreDiUnaSettimana
