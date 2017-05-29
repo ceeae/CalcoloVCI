@@ -19,7 +19,10 @@ namespace UnitTests
         public void CasoSpeciale_TrattaDatiPCIDSS_RitornaVero()
         {
 
-            sezioneCompliance.TrattaDatiPCIDSS = Risposta.Si;
+            sezioneCompliance.ImpostaDomandaQuestionario(
+                Perimetro.PCIDSS,
+                Risposta.Si
+                );
 
             bool isASpecialCase = sezioneCompliance.CasoSpeciale();
 
@@ -35,11 +38,17 @@ namespace UnitTests
             isASpecialCase.Should().BeFalse();
         }
 
-        [Fact]
-        public void CasoSpeciale_TrattaDatiCarteDiPagamento_RitornaVero()
+        [Theory]
+        [InlineData(Perimetro.PCIDSS)]
+        [InlineData(Perimetro.ICTMercatoCartePagamento)]
+        [InlineData(Perimetro.SOX)]
+        public void CasoSpeciale_RitornaVero(int perimetro)
         {
-            sezioneCompliance.TrattaDatiCarteDiPagamento = Risposta.Si;
-
+            sezioneCompliance.ImpostaDomandaQuestionario(
+                perimetro,
+                Risposta.Si
+                );
+ 
             bool isASpecialCase = sezioneCompliance.CasoSpeciale();
 
             isASpecialCase.Should().BeTrue();
@@ -60,22 +69,20 @@ namespace UnitTests
             result.Should().Be(vc);
         }
 
-        [Fact]
-        public void CalcolaVc_SuPerimetroMagistraturaEPCIDSS_Ritorna4()
+        [Theory]
+        [InlineData(
+            Perimetro.Magistratura, Risposta.Si,
+            Perimetro.PCIDSS, Risposta.Si, 
+            4.0
+            )]
+        public void CalcolaVc_SuPerimetroMagistraturaEPCIDSS_Ritorna4(int d1, int r1, int d2, int r2, int vc)
         {
-            sezioneCompliance.ImpostaDomandaQuestionario(
-                Perimetro.Magistratura, 
-                Risposta.Si
-            );
-
-            sezioneCompliance.ImpostaDomandaQuestionario(
-                Perimetro.PCIDSS,
-                Risposta.Si
-            );
+            sezioneCompliance.ImpostaDomandaQuestionario(d1, r1);
+            sezioneCompliance.ImpostaDomandaQuestionario(d2, r2);
 
             double result = sezioneCompliance.CalcolaVc();
 
-            result.Should().Be(4.0);
+            result.Should().Be(vc);
 
         }
 

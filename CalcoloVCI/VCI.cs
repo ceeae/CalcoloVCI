@@ -51,7 +51,12 @@ namespace CalcoloVCI
 
         private bool CasoSpecialeConVCISottoMinimo(double vci)
         {
-            return vci < VCIMIN && sezioneAnagrafica.CasoSpeciale();
+            return vci < VCIMIN && CasoSpeciale();
+        }
+
+        private bool CasoSpeciale()
+        {
+            return sezioneAnagrafica.CasoSpeciale() || sezioneCompliance.CasoSpeciale();
         }
 
         private double CalcolaPp()
