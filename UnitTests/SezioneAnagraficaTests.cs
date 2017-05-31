@@ -50,7 +50,7 @@ namespace UnitTests
         {
             sezioneAnagrafica.ImpostaAmbitoTecnologico(Ambito.BusinessICTMercato);
 
-            bool result = sezioneAnagrafica.ICTMercato();
+            bool result = sezioneAnagrafica.AmbitoICTMercato();
 
             result.Should().BeTrue();
         }

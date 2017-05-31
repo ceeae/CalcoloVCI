@@ -2,7 +2,7 @@
 
 namespace UnitTests
 {
-    public class VCIScenarioNessunImpatto : VCIAbstractScenario
+    public class VCIScenarioNessunImpatto : AbstractVCIScenario
     {
         protected override void CreateScenario()
         {

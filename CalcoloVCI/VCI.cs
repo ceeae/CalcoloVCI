@@ -1,8 +1,7 @@
-﻿
-
-using System;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Security.Permissions;
+using CalcoloVCI.ClasseCriticita;
 
 namespace CalcoloVCI
 {
@@ -17,6 +16,9 @@ namespace CalcoloVCI
         private SezioneTipoDati sezioneTipoDati;
         private SezioneImpatti sezioneImpatti;
 
+        private ClasseCriticitaSelector selector = new ClasseCriticitaSelector();
+
+        #region constructor
         public VCI(
                     SezioneAnagrafica sa, 
                     SezioneCompliance sc, 
@@ -30,7 +32,9 @@ namespace CalcoloVCI
             sezioneProcessi = sp;
             sezioneTipoDati = st;
             sezioneImpatti = si;
+
         }
+        #endregion
 
         public double CalcolaVCI()
         {
@@ -48,6 +52,11 @@ namespace CalcoloVCI
             return vci;
         }
 
+        public string ClasseCriticita(double vci)
+        {
+            AbstractClasseCriticita classe = selector.ClasseCriticita(vci);
+            return classe?.ToString();
+        }
 
         private bool CasoSpecialeConVCISottoMinimo(double vci)
         {
@@ -61,7 +70,7 @@ namespace CalcoloVCI
 
         private double CalcolaPp()
         {
-            if (sezioneAnagrafica.ICTMercato())
+            if (sezioneAnagrafica.AmbitoICTMercato())
             {
                 return PPICTMERCATO;
             }

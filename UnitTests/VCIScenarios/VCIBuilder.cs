@@ -1,13 +1,5 @@
-﻿
-using System;
+﻿using System;
 using CalcoloVCI;
-using UnitTests;
-using DomandeRisposte.Processi;
-using DomandeRisposte.Anagrafica;
-using DomandeRisposte.Compliance;
-using DomandeRisposte.TipoDati;
-using DomandeRisposte.Impatti;
-using UnitTests.VCIScenarios;
 
 namespace UnitTests
 {
@@ -30,7 +22,7 @@ namespace UnitTests
                     break;
 
                 case Scenarios.ICTMercatoImpattoMedio:
-                    builder = new VCIScenarioICTMercatoImpattoMedio();
+                    builder = new VCIScenarioIctMercatoImpattoMedio();
                     break;
 
                 case Scenarios.ICTMercatoImpattoMedioCasoCritico:

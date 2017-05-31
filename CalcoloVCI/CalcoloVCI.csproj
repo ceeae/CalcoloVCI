@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasseCriticita\AbstractClasseCriticita.cs" />
+    <Compile Include="ClasseCriticita\ClasseC1.cs" />
+    <Compile Include="ClasseCriticita\ClasseC2.cs" />
+    <Compile Include="ClasseCriticita\ClasseC3.cs" />
+    <Compile Include="ClasseCriticita\ClasseCriticitaSelector.cs" />
     <Compile Include="SezioneAnagrafica.cs" />
     <Compile Include="SezioneCompliance.cs" />
     <Compile Include="SezioneImpatti.cs" />

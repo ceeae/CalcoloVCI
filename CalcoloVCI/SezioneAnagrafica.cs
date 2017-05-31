@@ -33,7 +33,7 @@ namespace CalcoloVCI
                    appartenenzaRealtaCritiche == Risposta.Si;
         }
 
-        public bool ICTMercato()
+        public bool AmbitoICTMercato()
         {
             return ambitoTecnologico == Ambito.BusinessICTMercato;
         }

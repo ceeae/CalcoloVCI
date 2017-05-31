@@ -85,7 +85,7 @@
     <Compile Include="SezioneComplianceTests.cs" />
     <Compile Include="SezioneImpattiTests.cs" />
     <Compile Include="SezioneTipoDatiTests.cs" />
-    <Compile Include="VCIScenarios\VCIAbstractScenario.cs" />
+    <Compile Include="VCIScenarios\AbstractVCIScenario.cs" />
     <Compile Include="VCIScenarios\VCIBuilder.cs" />
     <Compile Include="VCIScenarios\VCIScenarioIctMercatoImpattoMedio.cs" />
     <Compile Include="VCIScenarios\VCIScenarioIctMercatoImpattoMedioCasoCritico.cs" />

@@ -1,44 +1,58 @@
 ﻿using CalcoloVCI;
+using DomandeRisposte.Anagrafica;
+using DomandeRisposte.Impatti;
 
 namespace UnitTests
 {
-    public class VCIScenarioICTMercatoImpattoMedio : VCIAbstractScenario
+
+    #region short-namespaces
+    using PerimetroCompliance = DomandeRisposte.Compliance.Perimetro;
+    using RispostaCompliance = DomandeRisposte.Compliance.Risposta;
+
+    using DomandaProcessi = DomandeRisposte.Processi.Domanda;
+    using RispostaProcessi = DomandeRisposte.Processi.Risposta;
+
+    using PerimetroTipoDati = DomandeRisposte.TipoDati.Perimetro;
+    using RispostaTipoDati = DomandeRisposte.TipoDati.Risposta;
+    #endregion
+
+    public class VCIScenarioIctMercatoImpattoMedio : AbstractVCIScenario
     {
 
         protected override void CreateScenario()
         {
             // Sezione Anagrafica
             sezioneAnagrafica.ImpostaAmbitoTecnologico(
-                DomandeRisposte.Anagrafica.Ambito.BusinessICTMercato
+                Ambito.BusinessICTMercato
                 );
 
             // Sezione Compliance
             sezioneCompliance.ImpostaDomandaQuestionario(
-                DomandeRisposte.Compliance.Perimetro.InformazioniPrivilegiate,
-                DomandeRisposte.Compliance.Risposta.Si
+                PerimetroCompliance.InformazioniPrivilegiate,
+                RispostaCompliance.Si
                 );
             sezioneCompliance.ImpostaDomandaQuestionario(
-                DomandeRisposte.Compliance.Perimetro.CookieAnalyticsTerzeParti,
-                DomandeRisposte.Compliance.Risposta.Si
+                PerimetroCompliance.CookieAnalyticsTerzeParti,
+                RispostaCompliance.Si
                 );
 
             // Sezione Processi
             sezioneProcessi.ImpostaDomandaQuestionario(
-                DomandeRisposte.Processi.Domanda.HumanResourcesManagement,
-                DomandeRisposte.Processi.Risposta.Influente
+                DomandaProcessi.HumanResourcesManagement,
+                RispostaProcessi.Influente
                 );
 
             // Sezione Tipo Dati
             sezioneTipoDati.ImpostaDomandaQuestionario(
-                DomandeRisposte.TipoDati.Perimetro.NO196,
-                DomandeRisposte.TipoDati.Risposta.Si
+                PerimetroTipoDati.NO196,
+                RispostaTipoDati.Si
                 );
 
             // Sezione Impatti
             sezioneImpatti.ImpostaRID(
-                DomandeRisposte.Impatti.Riservatezza.Medio,
-                DomandeRisposte.Impatti.Integrita.Medio,
-                DomandeRisposte.Impatti.Disponibilita.MaggioreDiUnaSettimana
+                Riservatezza.Medio,
+                Integrita.Medio,
+                Disponibilita.MaggioreDiUnaSettimana
                 );
         }
     }

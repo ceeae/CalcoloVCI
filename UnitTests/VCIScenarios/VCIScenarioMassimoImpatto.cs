@@ -1,39 +1,53 @@
 using CalcoloVCI;
+using DomandeRisposte.Anagrafica;
+using DomandeRisposte.Impatti;
 
 namespace UnitTests
 {
-    public class VCIScenarioMassimoImpatto : VCIAbstractScenario
+
+    #region short-namespaces
+    using PerimetroCompliance = DomandeRisposte.Compliance.Perimetro;
+    using RispostaCompliance = DomandeRisposte.Compliance.Risposta;
+
+    using DomandaProcessi = DomandeRisposte.Processi.Domanda;
+    using RispostaProcessi = DomandeRisposte.Processi.Risposta;
+
+    using PerimetroTipoDati = DomandeRisposte.TipoDati.Perimetro;
+    using RispostaTipoDati = DomandeRisposte.TipoDati.Risposta;
+    #endregion
+
+    public class VCIScenarioMassimoImpatto : AbstractVCIScenario
     {
         
         protected override void CreateScenario()
         {
             // Sezione Anagrafica
             sezioneAnagrafica.DomandaAppartenenzaRealtaCritiche(
-                DomandeRisposte.Anagrafica.Risposta.Si
+                Risposta.Si
                 );
 
             // Sezione Compliance
             sezioneCompliance.ImpostaDomandaQuestionario(
-                DomandeRisposte.Compliance.Perimetro.Magistratura, 
-                DomandeRisposte.Compliance.Risposta.Si
+                PerimetroCompliance.Magistratura, 
+                RispostaCompliance.Si
                 );
 
             // Sezione Processi
             sezioneProcessi.ImpostaDomandaQuestionario(
-                DomandeRisposte.Processi.Domanda.CustomerRelationshipManagement,
-                DomandeRisposte.Processi.Risposta.Determinante
+                DomandaProcessi.CustomerRelationshipManagement,
+                RispostaProcessi.Determinante
                 );
 
             // Sezione Tipo Dati
             sezioneTipoDati.ImpostaDomandaQuestionario(
-                DomandeRisposte.TipoDati.Perimetro.DatiSensibili,
-                DomandeRisposte.TipoDati.Risposta.Si
+                PerimetroTipoDati.DatiSensibili,
+                RispostaTipoDati.Si
                 );
 
             sezioneImpatti.ImpostaRID(
-                DomandeRisposte.Impatti.Riservatezza.Alto,
-                DomandeRisposte.Impatti.Integrita.Alto,
-                DomandeRisposte.Impatti.Disponibilita.MassimaPriorita
+                Riservatezza.Alto,
+                Integrita.Alto,
+                Disponibilita.MassimaPriorita
                 );
 
         }
