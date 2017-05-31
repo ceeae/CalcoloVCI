@@ -9,26 +9,27 @@ namespace CalcoloVCI.ClasseCriticita
 
         private double min = 0;
         private double max = 0;
-        private bool openmin = true;
-        private bool openmax = true;
+        private bool includemin = true;
+        private bool includemax = true;
 
         #region constructor
-        public Range(string condmin, double min, string condmax, double max)
+        public Range(string condmin, double minvalue, string condmax, double maxvalue)
         {
+            min = minvalue;
+            max = maxvalue;
+            includemin = string.Compare(condmin, MaggioreUguale) == 0 ? true : false;
+            includemax = string.Compare(condmax, MinoreUguale) == 0 ? true : false;
+
             if (min > max)
             {
                 throw new MalformedRangeException();
             }
 
-            if (min.CompareTo(max) == 0 && openmax && openmin)
+            if (min.CompareTo(max) == 0 && !(includemin && includemax))
             {
                 throw new MalformedRangeException();
             }
 
-            this.min = min;
-            this.max = max;
-            this.openmin = string.Compare(condmin, MaggioreUguale) == 0 ? true : false;
-            this.openmax = string.Compare(condmax, MinoreUguale) == 0 ? true: false;
         }
         #endregion
 
@@ -48,12 +49,12 @@ namespace CalcoloVCI.ClasseCriticita
 
         private bool EstremoInferiore(double value)
         {
-            return (value.CompareTo(min) == 0 && openmin);
+            return (value.CompareTo(min) == 0 && includemin);
         }
 
         private bool EstremoSuperiore(double value)
         {
-            return (value.CompareTo(max) == 0 && openmax);
+            return (value.CompareTo(max) == 0 && includemax);
         }
 
     }
