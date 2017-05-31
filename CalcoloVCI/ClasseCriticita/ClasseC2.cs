@@ -6,16 +6,8 @@ namespace CalcoloVCI.ClasseCriticita
 {
     public class ClasseC2 : AbstractClasseCriticita
     {
-        private double VCIMIN = 200;
-        private double VCIMAX = 425;
-
-        public override bool match(double vci)
+        public ClasseC2() : base(new VCIRange(200, true, 425, false))
         {
-            if (vci >= VCIMIN && vci < VCIMAX)
-            {
-                return true;
-            }
-            return false;
         }
 
         public override string ToString()
