@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Xml.Schema;
 
 namespace CalcoloVCI.ClasseCriticita
 {
@@ -19,7 +20,13 @@ namespace CalcoloVCI.ClasseCriticita
             max = maxvalue;
             includemin = string.Compare(condmin, MaggioreUguale) == 0 ? true : false;
             includemax = string.Compare(condmax, MinoreUguale) == 0 ? true : false;
+            Validate();
+        }
+        #endregion
 
+
+        public void Validate()
+        {
             if (min > max)
             {
                 throw new MalformedRangeException();
@@ -29,9 +36,10 @@ namespace CalcoloVCI.ClasseCriticita
             {
                 throw new MalformedRangeException();
             }
-
+            // other validation rules here ...
         }
-        #endregion
+
+
 
         public bool isInRange(double value)
         {
