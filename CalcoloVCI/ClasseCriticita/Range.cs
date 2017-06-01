@@ -1,11 +1,12 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Xml.Schema;
 
 namespace CalcoloVCI.ClasseCriticita
 {
     public class Range
     {
-        public static string MaggioreUguale =">=";
+        public static string MaggioreUguale = ">=";
         public static string MinoreUguale = "<=";
 
         private double min = 0;
@@ -18,8 +19,8 @@ namespace CalcoloVCI.ClasseCriticita
         {
             min = minvalue;
             max = maxvalue;
-            includemin = string.Compare(condmin, MaggioreUguale) == 0 ? true : false;
-            includemax = string.Compare(condmax, MinoreUguale) == 0 ? true : false;
+            includemin = string.Equals(condmin, MaggioreUguale);
+            includemax = string.Equals(condmax, MinoreUguale);
             Validate();
         }
         #endregion
@@ -32,7 +33,7 @@ namespace CalcoloVCI.ClasseCriticita
                 throw new MalformedRangeException();
             }
 
-            if (min.CompareTo(max) == 0 && !(includemin && includemax))
+            if (Double.Equals(min, max) && !(includemin && includemax))
             {
                 throw new MalformedRangeException();
             }

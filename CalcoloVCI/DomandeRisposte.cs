@@ -2,7 +2,7 @@
 
 namespace DomandeRisposte.Anagrafica
 {
-    public static class Ambito
+    public struct Ambito
     {
         public const int IT = 1;
         public const int Network = 2;
@@ -11,7 +11,7 @@ namespace DomandeRisposte.Anagrafica
         public const int Altro = 5;
     }
 
-    public static class Risposta
+    public struct Risposta
     {
         public const int No = 0;
         public const int Si = 1;
@@ -22,7 +22,7 @@ namespace DomandeRisposte.Anagrafica
 
 namespace DomandeRisposte.Compliance
 {
-    public static class Perimetro 
+    public struct Perimetro 
     {
         public const int Magistratura = 0;
         public const int DatiIntercettazzione = 1;
@@ -60,7 +60,7 @@ namespace DomandeRisposte.Compliance
         public const int ICTMercatoScambioDatiPersonaliTraPA = 33;
         public const int ICTMercatoPortaliWeb = 34;
     }
-    public static class Risposta
+    public struct Risposta
     {
         public const int No = 0;
         public const int Si = 1;
@@ -70,21 +70,21 @@ namespace DomandeRisposte.Compliance
 namespace DomandeRisposte.Impatti
 {
 
-    public static class Riservatezza
+    public struct Riservatezza
     {
         public const int Basso = 1;
         public const int Medio = 2;
         public const int Alto = 3;
     }
 
-    public static class Integrita
+    public struct Integrita
     {
         public const int Basso = 1;
         public const int Medio = 2;
         public const int Alto = 3;
     }
 
-    public static class Disponibilita
+    public struct Disponibilita
     {
         public const int MaggioreDiUnaSettimana = 0;
         public const int MinoreDiUnaSettimana = 1;
@@ -99,7 +99,7 @@ namespace DomandeRisposte.Impatti
 namespace DomandeRisposte.Processi
 {
 
-    public static class Domanda
+    public struct Domanda
     {
         public const int CustomerRelationshipManagement = 0;
         public const int MarketingAndOfferManagement = 1;
@@ -118,7 +118,7 @@ namespace DomandeRisposte.Processi
         public const int HumanResourcesManagement = 14;
     }
 
-    public static class Risposta
+    public struct Risposta
     {
         public const int Nessuno = 0;
         public const int Marginale = 1;
@@ -132,7 +132,7 @@ namespace DomandeRisposte.Processi
 
 namespace DomandeRisposte.TipoDati
 {
-    public static class Perimetro
+    public struct Perimetro
     {
         public const int NO196 = 0;
         public const int DatiPersonali = 1;
@@ -141,7 +141,7 @@ namespace DomandeRisposte.TipoDati
         public const int DatiTraffico = 4;
         public const int DatiLocalizzazione = 5;
     }
-    public static class Risposta
+    public struct Risposta
     {
         public const int No = 0;
         public const int Si = 1;
