@@ -37,7 +37,7 @@ namespace CalcoloVCI.ClasseCriticita
             {
                 throw new MalformedRangeException();
             }
-            // other validation rules here ...
+            // other validation rules here ....
         }
 
 
